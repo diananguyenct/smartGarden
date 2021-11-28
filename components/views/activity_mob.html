@@ -16,10 +16,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-    
+
     <!--angularJs-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-    
+
     <!--svg icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
@@ -30,12 +30,12 @@
     <title>Plantery</title>
 </head>
 
-<body style="background-color: #ecf0f3;"  >
+<body style="background-color: #ecf0f3;">
     <div class="container row">
 
-        <button class="btn btn-#b0bec9" id="backBtn">
-                <img src="images/icon/back_button.png" style="height: 30px;width: 30px;">
-            </button>
+        <button class="btn btn-#b0bec9 rounded-lg border border-success  shadow p-1 mb-2" id="backBtn">
+            <img src="images/icon/back_button.png" style="height: 40px;width: 40px;">
+        </button>
     </div>
     <div class="container" style="overflow-x: hidden;">
         <div class="row justify-content-center">
@@ -79,7 +79,8 @@
                                 <li class="list-group-item">
                                     <figure>
                                         <img id="userAvatar" class="w-100" src="images/icon/1.png" name="userAvatar">
-                                        <figcaption style="font-size: 10px;" id="username" name="username">username</figcaption>
+                                        <figcaption style="font-size: 10px;" id="username" name="username">username
+                                        </figcaption>
 
                                     </figure>
 
@@ -194,21 +195,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/5.1.0/qs.min.js"
         integrity="sha512-rjHuJkWaHSdq796S1Ov1tnGgXeQkEFTsrPW0VOjYUHU1b3Ey489/9n3FUSC0vfeaxTWjOVS8VLe1fLZ2kblcBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="/js/socket.io.js"></script>
-        <script src="/js/main_mob.js"></script>
+    <script src="/js/socket.io.js"></script>
+    <script src="/js/main_mob.js"></script>
 
-        <!-- disable leave button and chat box before joining-->
-        <script>
-            let leaveBtn= document.getElementById("leaveBtn");
-            let chatbox = document.getElementById("chatbox")
+    <!-- disable leave button and chat box before joining-->
+    <script>
+        let leaveBtn = document.getElementById("leaveBtn");
+        let chatbox = document.getElementById("chatbox")
 
-            leaveBtn.disabled=true
-            
+       
+        let backBtn = document.getElementById('backBtn');
+        backBtn.addEventListener('click', function (e) {
 
-        </script>
-    
+            history.back()
+
+        });
+
+    </script>
+
     <!--activityController-->
-   
+
 
 
 </body>

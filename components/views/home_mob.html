@@ -35,7 +35,7 @@
         <div class="col">
             <div class="pos-f-t">
                 <div class="collapse" id="navbarToggleExternalContent">
-                    <div class="bg-dark p-2">
+                    <div class="bg-dark p-2" style="background-color: #c2ce7a;">
                         <div class="list-group">
 
                             <a href="my_plant_list.html" class="list-group-item list-group-item-action">My plants</a>
@@ -49,9 +49,9 @@
                     </div>
                 </div>
                 <nav class="navbar navbar-dark bg-dark">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler bg-#b5bb8f" type="button" data-toggle="collapse"
+                        data-target="#navbarToggleExternalConten" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation" style="background-color: #b5bb8f;">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </nav>
@@ -59,18 +59,18 @@
 
         </div>
         <!-- div with home icon,foto icon and chat icon-->
-        <div class="container" style="margin-top: 10px;">
+        <div class="container rounded-lg border border-success  shadow p-3 mb-4" style="margin-top: 10px;background-color: #f4f4e4;height: 140px;" >
             <div class="row row-cols-2 justify-content-center">
                 <span hidden name="userId" id="userId">
                     <%=userId%>
                 </span>
                 <!--username and avatar-->
-                <div class="col text-center">
-                    <figure class="btn btn-light rounded rounded-2">
-                        <img id="userAvatar" name="userAvatar" style="width: 75px;height: 75px;" src="<%=avatar%>"
+                <div class="col text-center" >
+                    <figure class="btn rounded-lg border border-success  shadow p-1 mb-2" style="background-color:#d5dcba;">
+                        <img id="userAvatar" name="userAvatar" style="width: 75px;height: 75px;border-radius: 50%;" src="<%=avatar%>"
                             class="">
                         <figure-caption>
-                            <h6 id="username" name="username">
+                            <h6 id="username" name="username" style="color: white;">
                                 <%=username%>
                             </h6>
                         </figure-caption>
@@ -82,12 +82,12 @@
                 <div class="col">
 
                     <a href="/board_mobile" id="leaderId">
-                        <figure class="figure btn btn-light">
+                        <figure class="figure rounded-lg border border-success  shadow p-2 mb-3 " style="background-color: #d5dcba;">
 
                             <i class="bi bi-trophy-fill"></i>
 
                             <figcaption class="figure-caption">
-                                <label id="points" name="points">
+                                <label id="points" name="points" style="color: white;">
                                     <%=points%>
                                 </label>
                             </figcaption>
@@ -102,7 +102,7 @@
 
         <!-- Daily plant measures -->
 
-        <div class="rounded-lg container border border-white  shadow p-3 mb-4 " style="margin-top: 15px;">
+        <div class="rounded-lg container border border-success  shadow p-3 mb-4 " style="margin-top: -12px;background-color: #f4f4e4;">
             <table class="justify-content-md-center">
                 <tr class="col-12">
                     <td class="col border-right">
@@ -174,9 +174,9 @@
 
         </div>
         <!-- on going activities -->
-        <div class="rounded rounded-4 border border-white  shadow p-3 mb-5 " style="margin-top: 10px;">
-            <div class="shadow p-1 mb-2 col-7 border border-white rounded rounded-3" style="margin-bottom: 10px;">
-                <h6 class="text  font-weight-bold">On Going Activities</h6>
+        <div class="rounded rounded-4 border border-success  shadow p-3 mb-5 " style="margin-top: -13px; background-color: #f4f4e4;">
+            <div class="shadow p-1 mb-2 col-7 border border-white rounded rounded-3" style="margin-bottom: 10px;background-color: #d5dcba;">
+                <h6 class="text  font-weight-bold" style="color: white;">On Going Activities</h6>
             </div>
             <div style="padding-left: 10px;">
                 <div class="row row-cols-4">
@@ -204,7 +204,7 @@
         </div>
 
         <!--tips and badges-->
-        <div class="container border border-white shadow p-3 mb-5 rounded" style="margin-top: 20px;">
+        <div class="container border border-success shadow p-3 mb-5 rounded" style="margin-top: -40px;height: 150px;background-color: #f4f4e4;">
             <div class="row">
                 <div class="col-2">
                     <figure class="figure border border-white rounded-circle" style="height: 50px;width: 50px;">
