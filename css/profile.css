@@ -384,7 +384,10 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     background-color: #D5DCBA;
+=======
+>>>>>>> b7cadb50f1f8479da6daafe14abd7e7e04fb38e9
     font-size: 0.8vw;
     font-weight: bold;
     border-radius: 0 0 6px 6px;
