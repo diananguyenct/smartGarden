@@ -6,7 +6,10 @@ let usersList = document.getElementById('users');
 let joinRoom = document.getElementById('joinBtn');
 let closeRoom = document.getElementById('leaveBtn');
 let backBtn = document.getElementById('backBtn');
+<<<<<<< HEAD
 let nomActivity=document.getElementById('nomActivity');
+=======
+>>>>>>> 5adfbb5a03999d76b79117591e5d3b586823c416
 closeRoom.disabled=true;
 //get userAvatar username activity from URL
 let { currentUserId,userAvatar, username, activity } = Qs.parse(location.search, {
@@ -22,7 +25,11 @@ let socket = io();
 socket.on('clickActivity', ({ activity }) => {
     outputActivityName(activity);
     outputUsers(users);
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> 5adfbb5a03999d76b79117591e5d3b586823c416
 })
 
 //join button clicked to join activity
