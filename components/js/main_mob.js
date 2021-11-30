@@ -6,6 +6,8 @@ let usersList = document.getElementById('users');
 let joinRoom = document.getElementById('joinBtn');
 let closeRoom = document.getElementById('leaveBtn');
 let backBtn = document.getElementById('backBtn');
+let nomActivity=document.getElementById('nomActivity');
+closeRoom.disabled=true;
 //get userAvatar username activity from URL
 let { currentUserId,userAvatar, username, activity } = Qs.parse(location.search, {
     ignoreQueryPrefix: true
@@ -20,12 +22,14 @@ let socket = io();
 socket.on('clickActivity', ({ activity }) => {
     outputActivityName(activity);
     outputUsers(users);
+    
 })
 
 //join button clicked to join activity
 joinRoom.addEventListener('click', function (e) {
     socket.emit('joinMe', { currentUserId,userAvatar, username, activity });
-    leaveBtn.disabled=false
+    closeRoom.disabled=false
+    joinRoom.disabled=true;
     e.target.elements.msg.disabled=false
 })
 
@@ -72,18 +76,18 @@ closeRoom.addEventListener('click', function (e) {
 //back button  from activity 
 backBtn.addEventListener('click',function(e){
     history.back()
-});
+ });
 
 //Output message to DOM
 function outputMessage(message) {
     let div = document.createElement('div')
-
+    
     div.classList.add('message');
     div.innerHTML = `<div class="rounded rounded-4 border border-white  shadow p-3 mb-5">
 
 
     <div class="row ">
-    <p><img  src="${message.userAvatar}" name="userAvatar" style="height:50px;width:50px ; margin-left:10px"> 
+    <p><img  src="${message.userAvatar}" name="userAvatar" style="height:50px;width:50px ; margin-left:10px" class="rounded-circle border border-success shadow p-1 mb-2"> 
     <h6 name="username" class="card-subtitle mb-2 text-muted">${message.username}</h6> <h6 class="card-subtitle mb-2 text-muted" style="margin-left:50px">${message.time}</h6>
     </p>
 </div>
@@ -102,22 +106,22 @@ function outputActivityName(room) {
 }
 
 //add activity members numbers to DOM
-function outputActivityCounter(){
-    
+function activityIntro(room){
+    nomActivity.innerText=room;
 }
 
 //add users to DOM 
 function outputUsers(users) {
     usersList.innerHTML = `
     ${users.map(user => `
-    <li class="list-group-item">
-                                    <figure>
-                                        <img id="userAvatar" class="w-100" src="${user.userAvatar}" name="userAvatar">
-                                        <figcaption style="font-size: 10px;" id="username" name="username">${user.username}</figcaption>
+    <ul style="list-style-type:none"><li class="list-item-group" style="padding-right:70px">
+                                    <figure class=" " >
+                                        <img id="userAvatar" class="rounded-circle border border-success" src="${user.userAvatar}" name="userAvatar" style="height:60px;width:60px">
+                                        <figcaption style="font-size: 15px;font-style:bold;margin-top:5px" id="username" name="username" class="card-subtitle mb-2 text-muted">${user.username}</figcaption>
                              
                                     </figure>
         
-                                </li>`).join('')}
+                                </li></ul>`).join('')}
     `
         ;
 

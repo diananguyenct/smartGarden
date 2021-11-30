@@ -31,11 +31,11 @@
 </head>
 
 <body style="background-color: #ecf0f3;">
-    <div class="container" style="position:fixed;margin-top:40px">
+    <div class="container" style="margin-top:40px;overflow-x: scroll;overflow-x: visible;">
         <div class="col">
             <div class="pos-f-t">
                 <div class="collapse" id="navbarToggleExternalContent">
-                    <div class="bg-dark p-2">
+                    <div class="bg-dark p-2" style="background-color: #c2ce7a;">
                         <div class="list-group">
 
                             <a href="my_plant_list.html" class="list-group-item list-group-item-action">My plants</a>
@@ -48,29 +48,40 @@
 
                     </div>
                 </div>
-                <nav class="navbar navbar-dark bg-dark">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </nav>
+                <div class="row rounded-lg border   shadow p-1 mb-1" style="background-color: #b5bb8f;">
+                    <div class="col">
+                        <nav class="navbar navbar-dark bg-#f4f4e4" style="margin-left: -30px;">
+                            <button class="navbar-toggler bg-#b5bb8f" type="button" data-toggle="collapse"
+                                data-target="#navbarToggleExternalConten" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation" style="background-color: #b5bb8f;">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </nav>
+                    </div>
+                    <div class="col ">
+                        <img src="images/icon/logo.png" style="margin-top: 2px;">
+                    </div>
+
+
+                </div>
+
             </div>
 
         </div>
         <!-- div with home icon,foto icon and chat icon-->
-        <div class="container" style="margin-top: 10px;">
+        <div class="container rounded-lg border border-success  shadow p-3 mb-4"
+            style="margin-top: 10px;background-color: #f4f4e4;height: 140px;">
             <div class="row row-cols-2 justify-content-center">
                 <span hidden name="userId" id="userId">
                     <%=userId%>
                 </span>
                 <!--username and avatar-->
                 <div class="col text-center">
-                    <figure class="btn btn-light rounded rounded-2">
-                        <img id="userAvatar" name="userAvatar" style="width: 75px;height: 75px;" src="<%=avatar%>"
-                            class="">
+                    <figure class="btn" style="background-color:#d5dcba;">
+                        <img id="userAvatar" name="userAvatar" style="width: 75px;height: 75px;border-radius: 50%;"
+                            src="<%=avatar%>" class="">
                         <figure-caption>
-                            <h6 id="username" name="username">
+                            <h6 id="username" name="username" style="color: white;">
                                 <%=username%>
                             </h6>
                         </figure-caption>
@@ -82,12 +93,13 @@
                 <div class="col">
 
                     <a href="/board_mobile" id="leaderId">
-                        <figure class="figure btn btn-light">
+                        <figure class="figure " style="background-color: #d5dcba;width: 60px;border-radius: 10%;">
 
-                            <i class="bi bi-trophy-fill"></i>
+                            <i class="bi bi-trophy" style="margin-left: 20px;"></i>
 
-                            <figcaption class="figure-caption">
-                                <label id="points" name="points">
+                            <figcaption class="figure-caption" style="border-radius: 50%;">
+                                <label id="points" name="points"
+                                    style="color: white;margin-left: 20px;font-size: 15px;">
                                     <%=points%>
                                 </label>
                             </figcaption>
@@ -102,10 +114,11 @@
 
         <!-- Daily plant measures -->
 
-        <div class="rounded-lg container border border-white  shadow p-3 mb-4 " style="margin-top: 15px;">
+        <div class="rounded-lg container border border-success  shadow p-3 mb-4 "
+            style="margin-top: -12px;background-color: #f4f4e4;">
             <table class="justify-content-md-center">
                 <tr class="col-12">
-                    <td class="col border-right">
+                    <td class="col">
                         <figure class="figure">
                             <img style="width: 50px;height: 50px;" src="<%=plantAvatar%>">
                             <figcaption class="figure-caption" style="text-align: center;">
@@ -113,9 +126,14 @@
                             </figcaption>
                         </figure>
                     </td>
+                    <td>
+                        <div style="margin-left:-200px;">Daily plant health</div>
+                    </td>
+                </tr>
+                <tr>
                     <td class="">
-                        <div style="margin-left: 100px;">Daily plant health</div>
-                        <table>
+
+                        <table style="table-layout: fixed;width: 100%;">
                             <tr>
                                 <td class="col col-lg-2">
                                     <figure class="figure">
@@ -128,7 +146,7 @@
                                         </figcaption>
                                     </figure>
                                 </td>
-                                
+
                                 <td class="col col-lg-2 border-left">
                                     <figure class="figure">
                                         <i class="bi bi-thermometer-sun" style="color: chocolate;"></i>
@@ -140,7 +158,7 @@
                                         </figcaption>
                                     </figure>
                                 </td>
-                               
+
                                 <td class="col col-lg-2 border-left">
                                     <figure class="figure">
                                         <i class="bi bi-moisture" style="color: red;"></i>
@@ -152,10 +170,10 @@
                                         </figcaption>
                                     </figure>
                                 </td>
-                               
+
                             </tr>
                             <tr>
-                            
+
                                 <td class="col col-lg-2" name="humAlert" id="humAlert">
                                     Good
                                 </td>
@@ -169,38 +187,40 @@
                         </table>
                     </td>
                 </tr>
-                
+
+
+
             </table>
 
         </div>
         <!-- on going activities -->
-        <div class="rounded rounded-4 border border-white  shadow p-3 mb-5 " style="margin-top: 10px;">
-<<<<<<< HEAD
-            <div class="shadow p-1 mb-2 col-7 border border-white rounded rounded-3" style="margin-bottom: 10px;background-color: #c2ce7a;">
-=======
-            <div class="shadow p-1 mb-2 col-7 border border-white rounded rounded-3" style="margin-bottom: 10px;">
->>>>>>> b7cadb50f1f8479da6daafe14abd7e7e04fb38e9
-                <h6 class="text  font-weight-bold">On Going Activities</h6>
+        <div class="rounded rounded-4 border border-success  shadow p-3 mb-5 "
+            style="margin-top: -13px; background-color: #f4f4e4;">
+            <div class="shadow p-1 mb-2 col-7 border border-white rounded rounded-3"
+                style="margin-bottom: 10px;background-color: #d5dcba;">
+                <h6 class="text  font-weight-bold" style="color: white;">On Going Activities</h6>
             </div>
             <div style="padding-left: 10px;">
                 <div class="row row-cols-4">
-                    <% let counter=0 %> 
-                    <% events.forEach(event=>{%>
-                        <div class="col">
-                            <h6 class="text-center" style="font-size: 12px;" id="activityRoom<%=counter%>" class="activityRooms">
-                                <%=event.EName%>
-                            </h6>
-                            <figure class="figure inside-link">
-                                <a class="activityLink" href="/activity">
-                                    <img class="btn btn-light" style="width: 50px;height: 50px;" src="<%=event.EPic%>"/>
-                                </a>
-                                <figcaption class="figure-caption text-center">
-                                    <span class="badge badge-light rounded-circle"></span>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <% counter++ %> 
-                        <%});%>
+                    <% let counter=0 %>
+                        <% events.forEach(event=>{%>
+                            <div class="col">
+                                <h6 class="text-center" style="font-size: 12px;" id="activityRoom<%=counter%>"
+                                    class="activityRooms">
+                                    <%=event.EName%>
+                                </h6>
+                                <figure class="figure inside-link">
+                                    <a class="activityLink" href="/activity">
+                                        <img class="btn btn-light" style="width: 50px;height: 50px;"
+                                            src="<%=event.EPic%>" />
+                                    </a>
+                                    <figcaption class="figure-caption text-center">
+                                        <span class="badge badge-light rounded-circle"></span>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <% counter++ %>
+                                <%});%>
 
                 </div>
             </div>
@@ -208,13 +228,14 @@
         </div>
 
         <!--tips and badges-->
-        <div class="container border border-white shadow p-3 mb-5 rounded" style="margin-top: 20px;">
+        <div class="container border border-success shadow p-3 mb-5 rounded"
+            style="margin-top: -40px;height: 150px;background-color: #f4f4e4;">
             <div class="row">
                 <div class="col-2">
                     <figure class="figure border border-white rounded-circle" style="height: 50px;width: 50px;">
                         <img src="images/icon/like.png" style="height: 40px;width: 40px;">
                     </figure>
-                    <figcaption class="figure-caption">
+                    <figcaption class="figure-caption" hidden>
                         <a href="fun_fact.html">
                             <button type="button" class="btn btn-outline-success btn-sm">more</button>
                         </a>
@@ -226,8 +247,12 @@
 
                     <h6 class="text text-center font-weight-bold">Did you know?</h6>
                     </h6>
-                    <p class="text text-center"><abbr>playing music around your plant is a good idea</abbr></p>
-                    </p>
+                    <% tips.forEach(tip=>{%>
+                        <p class="text text-justify text-center" style="margin-top: -10px;"><abbr>
+                                <%=tip.tipContent%>
+                            </abbr></p>
+                        </p>
+                        <%});%>
 
                 </div>
 
@@ -262,6 +287,32 @@
             </li>
         </ul>
     </div>
+
+    <!--pop up modal after 30 second-->
+    <div class="modal fade" id="tipModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header btn-success">
+                    <h5 class="modal-title" id="staticBackdropLabel">Plant Tip</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <% tips.forEach(tip=>{%>
+                        <p class="text text-center"><abbr>
+                                <%=tip.tipContent%>
+                            </abbr></p>
+                        </p>
+                        <%});%>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript">
 
         let leaderId = document.getElementById("leaderId");
@@ -271,12 +322,12 @@
         let userAvatar = document.getElementById('userAvatar').getAttribute('src');
         let username = document.getElementById('username').innerHTML;
 
-        for (let i=0;i<activityLinks.length;i++) {
-        let activityRoom = document.getElementById('activityRoom'+i).innerHTML;
-        activityLinks[i].href += "?"+"&currentUserId="+currentUserId.trim() + "&userAvatar=" + userAvatar.trim() + "&username=" + username.trim() + "&activity=" + activityRoom.trim();
-        
-    }
-        
+        for (let i = 0; i < activityLinks.length; i++) {
+            let activityRoom = document.getElementById('activityRoom' + i).innerHTML;
+            activityLinks[i].href += "?" + "&currentUserId=" + currentUserId.trim() + "&userAvatar=" + userAvatar.trim() + "&username=" + username.trim() + "&activity=" + activityRoom.trim();
+
+        }
+
 
         leaderId.href += "?" + "&currentUserId=" + currentUserId;
 
@@ -340,6 +391,10 @@
         }
 
 
+        //pop window function 
+        setTimeout(function () {
+            $('#tipModal').modal();
+        }, 3000);
 
     </script>
 </body>

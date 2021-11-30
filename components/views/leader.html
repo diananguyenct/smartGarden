@@ -33,41 +33,39 @@
 
 </head>
 
-<body ng-controller="WelcomeController" style="background-color: #ecf0f3;">
+<body ng-controller="WelcomeController" style="background-color: #f4f4e4;" class="">
+    <div class="container row">
 
-    <div class="row">
+        <button class="btn btn-#b0bec9 rounded-lg border border-success  shadow p-1 mb-2" id="backBtn">
+                <img src="images/icon/back_button.png" style="height: 80px;width: 80px;">
+            </button>
+    </div>
+    <div class="row" style="width: 800px;margin-left: 100px;">
         <div class="col-sm-12">
-            <div class=" mx-5 border border-3 rounded border-white"
-                style="margin-top:100px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">
+            <div class=" mx-5 "
+                style="margin-top:100px;background-color: #f4f4e4;">
                 <div class="d-flex justify-content-center ">
-                    <img src='<%=userAvatar%>' style="width:180px; height:180px ;margin-top:-30px"
-                        class="rounded-circle" alt="...">
+                    <img src='<%=userAvatar%>' style="width:180px; height:180px ;margin-top:-95px"
+                        class="rounded-circle border border-success shadow p-1 mb-2" alt="...">
                 </div>
 
-                <div class="row justify-content-center">
+                <div class="row justify-content-center " style="margin-top: -15px;">
                     <div class="text-center">
-                        <h5 class="my-4 fs-1 fw-bold">
+                        <h5 class="my-4 fs-1 fw-bold" style="font-size: 40px;font-weight: bold;">
                             <%=username%>
                         </h5>
-                        <p class="fs-1 fw-bold"><img src="/images/icon/badge.png" style="width:50px; height:50px">
+                        <p class="fs-1 fw-bold shadow p-1 mb-2 col-7 border rounded rounded-3 " style="width:700px;margin-left: 200px;font-size: 40px;background-color: whitesmoke;"><img src="/images/icon/badge.png" style="width:100px; height:100px">
                             <%=userLevel%>
                         </p>
                     </div>
 
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <div class=" mx-5 border border-3 rounded border-white"
-                style="margin-top:50px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">
+                <div class=" mx-5 rounded-lg   shadow p-1 mb-2"
+                style="margin-top:50px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);background-color: #f4f4e4;width: 584px;">
                 <div class="row justify-content-center py-3">
-                    <div
-                        style="margin-left:3%;width: 400px;height: 380px;background: #ECF0F3;box-shadow: 18px 18px 50px rgba(30, 255, 228, 0.42), -18px -18px 60px rgba(95, 149, 255, 0.29);border-radius: 50%">
-                        <div class="text-center" style="padding-top: 130px;">
-                            <h5 class="my-4 fs-1 fw-bold" name>
+                    <div style="margin-left:3%;width: 330px;height: 310px;background: #ECF0F3;box-shadow: 18px 18px 50px rgba(30, 255, 228, 0.42), -18px -18px 60px rgba(95, 149, 255, 0.29);border-radius: 50%">
+                        <div class="text-center" style="padding-top: 100px;">
+                            <h5 class="my-4 fs-1 fw-bold" style="font-size: 50px;margin-top: -30px;">
                                 <%=points%>
                             </h5>
 
@@ -75,51 +73,60 @@
                     </div>
                 </div>
             </div>
+            <div class=" rounded rounded-lg border   shadow p-1 mb-2" style="background-color: #f4f4e4;width: 800px;margin-left: -60px;margin-top: 20px;" >
+                <div class="shadow p-1 mb-2 col-7 border border-white rounded rounded-3" style="margin-bottom: 10px;background-color: #d5dcba;">
+                    <h6 class="text  font-weight-bold" style="color: white;font-size: 50px;">Leader Board</h6>
+                </div>
+                <% let counter=1%> 
+                <% users.forEach(user=>{%>
+                    <div class="card mb-3 border rounded rounded-10" >
+                        <div class="row g-0">
+                            <div class="col-md-4" >
+                                 <small style="font-size: 30px;background-color: #d5dcba;margin-top: 25px;" class="badge  rounded-circle"><%=counter%></small>
+                                <img class="img-fluid rounded-start border border-success shadow p-1 mb-2" style="width: 100px; height: 100px;margin-left: 25px;margin-top: 10px; border-radius: 50%;"
+                                    src="<%=user.UAvatar%>" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="row">
+                                       
+                                        <h5 class="card-title col" style="font-size:40px;margin-top: 10px;">
+                                            <%=user.UName%>
+                                        </h5>
+                                        <p class="card-text col" style="margin-top: 15px;"><small class="text-muted" style="color:#809663;font-size: 35px ;text-align: center;">
+                                            <%=user.UPoints%> points
+                                        </small></p>
+                                    </div>
+                                   
+                                   
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+                    <% counter++ %>
+                    <%});%>
+        
+            </div>
+            </div>
         </div>
-    </div>
+    
+
+
 
     <!--leaderboard-->
 
-    <div class=" rounded rounded-4 border border-white  shadow p-3 mb-5" style="background-color: ECF0F3;margin-left: 10px;width: 600px;margin-left: 50px;margin-top: 20px;" >
-        <% let counter=1%> 
-        <% users.forEach(user=>{%>
-            <div class="card mb-3 border rounded rounded-10" >
-                <div class="row g-0">
-                    <div class="col-md-4">
-                         <small style="font-size: 30px;"><%=counter%></small>
-                        <img class="img-fluid rounded-start" style="width: 90px; height: 90px;left: 38px;top: 35px; border-radius: 50%;"
-                            src="<%=user.UAvatar%>" />
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <div class="row">
-                               
-                                <h5 class="card-title col" style="font-size:40px;">
-                                    <%=user.UName%>
-                                </h5>
-                                <p class="card-text col"><small class="text-muted" style="color:#809663;font-size: 20px;">
-                                    <%=user.UPoints%> points
-                                </small></p>
-                            </div>
-                           
-                           
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <% counter++ %>
-            <%});%>
-
+    
     </div>
-    </div>
-    </div>
+    
+</div>
 </body>
 
 
 
 
 <script>
+
 let index=[1,2,3,4,5,6]
     //move slides
     const moveToSlide = (track, currentSlide, targetSlide) => {
@@ -127,6 +134,12 @@ let index=[1,2,3,4,5,6]
         currentSlide.classList.remove('current-slide');
         targetSlide.classList.add('current-slide');
     }
+let backBtn=document.getElementById('backBtn');
+backBtn.addEventListener('click', function (e) {
+
+history.back()
+
+});
 
 </script>
 
