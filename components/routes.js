@@ -26,24 +26,6 @@ module.exports = (app, db, axios, io) => {
             res.sendFile(__dirname + '/views' + '/profile.html');
         })
 
-
-        // //get user by Id Bambi!!!!
-        // app.get('/getBGUser', function (req, res) {
-
-        //     let userId = (req.query.userId)
-
-        //     let sql = 'SELECT UName,ULevel,UAvatar FROM Users WHERE UserId = ?';
-        //     values = '9'
-
-        //     let processSQL = function (err, result) {
-        //         if (err) throw err;
-        //         console.log(result)
-        //         res.json(result);
-        //     };
-        //     db.query(sql, values, processSQL);
-
-        // })
-
         //require db (TESTED)
         app.get('/getUsers', function (req, res) {
             let sql = 'SELECT * FROM Users';
@@ -357,7 +339,7 @@ module.exports = (app, db, axios, io) => {
                 queryValues = (id);
                 db.query(queryPlant, queryValues, (err, results) => {
                     if (err) throw err;
-                    queryEvents="SELECT EName FROM Events ORDER BY RAND() DESC LIMIT 4";
+                    queryEvents="SELECT EName,EPic FROM Events ORDER BY RAND() DESC LIMIT 4";
                     db.query(queryEvents,(err,events)=>{
                         if(err) throw err;
                         res.setHeader('Content-Type', 'text/html');
@@ -378,7 +360,7 @@ module.exports = (app, db, axios, io) => {
             db.query(sqlQuery, values, postSQL)
         })
 
-        //-------------------leader board route 
+        //-------------------leader board route--------------//
         app.get('/board_mobile',function(req,res){
             let userId = (req.query.currentUserId);
             let queryLeader = "SELECT UName,UAvatar,UPoints,ULevel FROM Users WHERE UserId=?";
